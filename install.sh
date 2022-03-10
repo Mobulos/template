@@ -1,8 +1,6 @@
 #!/bin/bash
 # Init
 
-https://bit.ly/3CuNOiu
-
 # root check
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
