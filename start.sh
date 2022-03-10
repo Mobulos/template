@@ -2,7 +2,7 @@
 
 ############################################
 ################# CHANGE ###################
-ver=0.0.1
+ver=0.0.2
 dat=10.03.2022
 filescript=start.sh
 link=https://raw.githubusercontent.com/Mobulos/template/master/start.sh
@@ -62,6 +62,7 @@ install:
     done
 
 menue:
+clear
     echo "$yellow########################################"
     read -t0.1
     echo "#####  Temp Script by Mobulos  #####"
