@@ -1,5 +1,5 @@
 #!/bin/bash
-# Init
+
 
 # root check
 FILE="/tmp/out.$$"
