@@ -2,7 +2,7 @@
 
 ## Get started:
 ```
-bash -c  "$(wget -qO- https://bit.ly/3vTKcW9)"
+bash -c  "$(wget -qO- https://raw.githubusercontent.com/Mobulos/template/master/install.sh)"
 ```
 
 ##Disclaimer
