@@ -5,7 +5,7 @@
 ver=0.0.1
 dat=10.03.2022
 filescript=start.sh
-link=https://raw.githubusercontent.com/Mobulos/MultiscriptByMobulos/master/MultiscriptByMobulos.sh
+link=https://raw.githubusercontent.com/Mobulos/template/master/start.sh
 ############################################
 ############################################
 
@@ -21,6 +21,8 @@ function jumpto
 #JumpTo Definitionen
 menue=${1:-"menue"}
 install=${2:-"install"}
+update=${3:-"update"}
+start=${4:-"start"}
 
 # Farbcodes definieren
 red=($(tput setaf 1))
@@ -75,4 +77,50 @@ menue:
 
     tmp=($(tput setaf 2)) && echo "$tmp"
     read -t0.1
-    echo "  1. Bot installieren"
+    echo "  1. Erster Punkt"
+
+    tmp=($(tput setaf 3)) && echo -n "$tmp"
+    read -t0.1
+    echo "  2. Script Updaten"
+
+    read -t0.1
+    tmp=($(tput setaf 1))
+    echo -n "$tmp"
+    echo "  3. Exit"
+
+    echo "$reset"
+    read -n1 -p "Bot Befehle: " befehl
+    case $befehl in
+    1)
+        clear
+        jumpto $start
+        exit 0
+    ;;
+    2)
+    clear
+    jumpto $update
+    exit 0
+    ;;
+    3)
+        clear
+        exit 0
+    ;;
+  	*)
+        clear
+        echo "Die Eingabe wird nicht Akzeptiert."
+        read -t3 -n1
+        jumpto $failedmenue
+  	;;
+    esac
+
+update:
+    clear
+    echo "Dies kann einige Sekunden dauern."
+    read -t3 -n1
+    clear
+    rm $filescript
+    wget $link
+    chmod +x $filescript
+    clear
+    echo "Update abgeschlossen, das Script kann jetzt erneut gestartet werden."
+    exit 0
