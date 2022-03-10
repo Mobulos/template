@@ -1,6 +1,3 @@
-#!/bin/bash
-
-
 # root check
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
